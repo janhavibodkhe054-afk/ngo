@@ -34,7 +34,7 @@ const slides = [
   },
 ];
 
-const HeroSlider = () => {
+const HeroSlides = () => {
   return (
     <div className="relative w-full h-[80vh] overflow-hidden z-10">
 
@@ -113,4 +113,4 @@ const HeroSlider = () => {
   );
 };
 
-export default HeroSlider;
+export default HeroSlides;

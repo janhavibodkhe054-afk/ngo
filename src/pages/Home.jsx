@@ -1,5 +1,5 @@
 import React from "react";
-import HeroSlider from "../component/Home/Heroslider";
+import HeroSlides from "../component/Home/HeroSlides";
 import HomeAbout from "../component/Home/HomeAbout";
 import ProgramsSection from "../component/Home/ProgramsSection";
 import OwnerHome from "../component/Home/OwnerHome";
@@ -10,7 +10,7 @@ import CareSection from "../component/Home/CareSection";
 const Home = () => {
   return (
     <div>
-      <HeroSlider />
+      <HeroSlides />
       <HomeAbout />
       <ProgramsSection />
       <OwnerHome />
