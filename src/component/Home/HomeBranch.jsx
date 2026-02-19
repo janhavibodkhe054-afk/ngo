@@ -2,105 +2,85 @@ import React from "react";
 
 const HomeBranch = () => {
   return (
-    <section className="relative py-28 bg-gradient-to-b from-[#f8f7f3] to-white overflow-hidden">
+    <section className="py-20 bg-white">
 
-      {/* Soft Decorative Shapes */}
-      <div className="absolute -top-20 -left-20 w-80 h-80 bg-yellow-200 opacity-20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-300 opacity-10 rounded-full blur-3xl"></div>
+      {/* Section Header */}
+      <div className="max-w-6xl mx-auto px-6 mb-14 text-center">
+        <span className="text-yellow-600 text-sm tracking-widest uppercase font-semibold">
+          Our Branches
+        </span>
 
-      <div className="relative max-w-6xl mx-auto px-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
+          Dedicated Educational Centers
+        </h2>
+      </div>
 
-        {/* Section Heading */}
-        <div className="text-center mb-20">
-          <span className="text-yellow-600 font-semibold tracking-widest uppercase">
-            Our Branches
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4">
-            Dedicated Educational Centers
-          </h2>
-          <div className="w-24 h-1 bg-yellow-500 mx-auto mt-6"></div>
-        </div>
+      {/* Compact Cards */}
+      <div className="max-w-6xl mx-auto px-6 space-y-10">
 
         {/* Branch 1 */}
-        <div className="mb-24 bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-500">
+        <div className="group flex flex-col md:flex-row items-center bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg transition duration-300">
 
-          <div className="md:flex items-center">
-            
-            {/* Image */}
-            <div className="md:w-1/2">
-              <img
-                src="/slide3.jpeg"
-                alt="Vidyadeep Special School"
-                className="w-full h-[350px] md:h-[450px] object-cover"
-              />
-            </div>
+          {/* Image */}
+          <div className="md:w-1/3 w-full h-56">
+            <img
+              src="/slide3.jpeg"
+              alt="Vidyadeep Special School"
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            />
+          </div>
 
-            {/* Content */}
-            <div className="md:w-1/2 p-12">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                Vidyadeep Special School
-              </h3>
+          {/* Content */}
+          <div className="md:w-2/3 w-full p-6 md:p-8">
+            <h3 className="text-xl font-bold text-gray-900 mb-2">
+              Vidyadeep Special School
+            </h3>
 
-              <div className="w-16 h-1 bg-yellow-500 mb-6"></div>
+            <p className="text-gray-600 text-sm leading-6 mb-3">
+              Specialized education and holistic development for
+              differently-abled children in Amravati.
+            </p>
 
-              <p className="text-gray-600 leading-8 mb-4">
-                Operated by Mandbudhi Va Sharirik Apang Vikas Sanstha,
-                Amravati, this institution is committed to providing
-                specialized education and holistic development for
-                differently-abled children.
-              </p>
+            <p className="text-gray-500 text-sm mb-3">
+              📍 Indala Phata, Mardi Road, Amravati
+            </p>
 
-              <p className="text-gray-600 leading-8 mb-4">
-                Location: Indala Phata, Mardi Road, Amravati.
-              </p>
-
-              <p className="font-medium text-gray-800">
-                Recognized by the Ministry of Social Justice & Disability
-                Welfare, Government of Maharashtra.
-              </p>
-            </div>
-
+            <button className="text-yellow-600 font-semibold text-sm hover:underline">
+              Learn More →
+            </button>
           </div>
         </div>
 
         {/* Branch 2 */}
-        <div className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-500">
+        <div className="group flex flex-col md:flex-row items-center bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg transition duration-300">
 
-          <div className="md:flex flex-row-reverse items-center">
-            
-            {/* Image */}
-            <div className="md:w-1/2">
-              <img
-                src="/slide2.jpeg"
-                alt="Nutan School for the Deaf and Mute"
-                className="w-full h-[350px] md:h-[450px] object-cover"
-              />
-            </div>
+          {/* Image */}
+          <div className="md:w-1/3 w-full h-56">
+            <img
+              src="/slide2.jpeg"
+              alt="Nutan School for the Deaf and Mute"
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            />
+          </div>
 
-            {/* Content */}
-            <div className="md:w-1/2 p-12">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                Nutan School for the Deaf and Mute
-              </h3>
+          {/* Content */}
+          <div className="md:w-2/3 w-full p-6 md:p-8">
+            <h3 className="text-xl font-bold text-gray-900 mb-2">
+              Nutan School for the Deaf and Mute
+            </h3>
 
-              <div className="w-16 h-1 bg-yellow-500 mb-6"></div>
+            <p className="text-gray-600 text-sm leading-6 mb-3">
+              Empowering hearing and speech-impaired students through
+              structured learning and inclusive education.
+            </p>
 
-              <p className="text-gray-600 leading-8 mb-4">
-                This branch focuses on empowering hearing and speech-impaired
-                students through structured learning, communication training,
-                and inclusive educational support.
-              </p>
+            <p className="text-gray-500 text-sm mb-3">
+              📍 Indala Phata, Mardi Road, Amravati
+            </p>
 
-              <p className="text-gray-600 leading-8 mb-4">
-                Location: Indala Phata, Mardi Road, Amravati.
-              </p>
-
-              <p className="font-medium text-gray-800">
-                Recognized by the Ministry of Social Justice & Disability
-                Welfare, Government of Maharashtra.
-              </p>
-            </div>
-
+            <button className="text-yellow-600 font-semibold text-sm hover:underline">
+              Learn More →
+            </button>
           </div>
         </div>
 

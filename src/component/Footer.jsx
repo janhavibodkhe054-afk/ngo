@@ -95,6 +95,7 @@ const Footer = () => {
       <div className="border-t border-gray-300 mt-12 pt-6 text-center text-sm text-gray-600">
         © {new Date().getFullYear()} Mandbudhi Va Sharirik Apang Vikas Sanstha, Amravati. All Rights Reserved.
       </div>
+      
     </footer>
   );
 };

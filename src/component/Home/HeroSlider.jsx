@@ -1,7 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
 
 const slides = [
   {
@@ -38,53 +36,40 @@ const slides = [
 
 const HeroSlider = () => {
   return (
-    <div
-      className="relative w-full h-[80vh] overflow-hidden 
-      shadow-[inset_0_-60px_80px_-20px_rgba(255,255,255,1)] 
-      z-10"
-    >
+    <div className="relative w-full h-[80vh] overflow-hidden z-10">
+
       <Swiper
         modules={[Autoplay, Pagination]}
         autoplay={{ delay: 4000 }}
         pagination={{ clickable: true }}
-        loop={true}
+        loop
         className="h-full"
       >
         {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <div className="relative w-full h-full overflow-hidden">
-              
-              {/* Background Image */}
+          <SwiperSlide key={index} className="h-full">
+            <div className="relative w-full h-full">
+
+              {/* Background */}
               <img
                 src={slide.image}
                 alt="slide"
                 className="absolute w-full h-full object-cover"
               />
 
-              {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
 
               {/* Content */}
               <div className="relative z-10 flex flex-col justify-center h-full px-10 md:px-20 max-w-3xl">
-                
-                <h1
-                  className="text-4xl md:text-6xl text-[#f6CC48] mb-6"
-                  style={{ fontFamily: "Playfair Display, serif" }}
-                >
+                <h1 className="text-4xl md:text-6xl text-[#f6CC48] mb-6 font-serif">
                   {slide.title}
                 </h1>
 
-                <p
-                  className="text-white text-lg md:text-xl leading-relaxed mb-8"
-                  style={{ fontFamily: "Poppins, sans-serif" }}
-                >
+                <p className="text-white text-lg md:text-xl leading-relaxed mb-8 font-sans">
                   {slide.description}
                 </p>
 
-                <span
-                  className="text-3xl md:text-4xl text-white hover:text-[#f6CC48] cursor-pointer transition duration-300"
-                  style={{ fontFamily: "Dancing Script, cursive" }}
-                >
+                <span className="text-3xl md:text-4xl text-white hover:text-[#f6CC48] cursor-pointer transition duration-300">
                   Read More
                 </span>
               </div>
@@ -93,11 +78,23 @@ const HeroSlider = () => {
         ))}
       </Swiper>
 
-      {/* Pagination Styling (No External CSS File Needed) */}
+      {/* Custom Pagination Styling */}
       <style>
         {`
+          .swiper {
+            height: 100%;
+          }
+
+          .swiper-wrapper {
+            height: 100%;
+          }
+
+          .swiper-pagination {
+            bottom: 20px !important;
+          }
+
           .swiper-pagination-bullet {
-            background-color: white !important;
+            background-color: white;
             opacity: 0.7;
             width: 10px;
             height: 10px;
@@ -105,7 +102,7 @@ const HeroSlider = () => {
           }
 
           .swiper-pagination-bullet-active {
-            background-color: #f6CC48 !important;
+            background-color: #f6CC48;
             opacity: 1;
             transform: scale(1.2);
             transition: 0.3s ease;
