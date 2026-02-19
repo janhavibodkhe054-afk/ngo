@@ -5,7 +5,7 @@ import ScrollToTop from "./component/ScrollToTop";
 import Navbar from "./component/Navbar";
 import Footer from "./component/Footer";
 import Home from "./pages/Home";
-import About from "./pages/AboutUS";
+import AboutUS from "./pages/AboutUS";
 import Contact from "./pages/Contact";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<AboutUS />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer/>

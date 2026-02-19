@@ -67,7 +67,7 @@ const Navbar = () => {
           {/* ===== MENU ===== */}
           <nav className="hidden lg:flex items-center space-x-10">
             <Link
-              to="/"
+              to="/about"
               className="text-gray-700 text-[16px] font-medium hover:text-black transition"
             >
               ABOUT US
