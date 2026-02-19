@@ -1,5 +1,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const slides = [
   {
@@ -17,30 +21,35 @@ const slides = [
   {
     image: "/slide3.jpeg",
     title: "Inclusive Development",
-    description:
-      "Helping children grow confidently with dignity and respect.",
+    description: "Helping children grow confidently with dignity and respect.",
   },
   {
     image: "/slide4.jpg",
     title: "Strength Through Support",
-    description:
-      "Building strong communities with awareness and compassion.",
+    description: "Building strong communities with awareness and compassion.",
   },
   {
     image: "/slide5.jpeg",
     title: "A Brighter Tomorrow",
-    description:
-      "Committed to upliftment and empowerment of special children.",
+    description: "Committed to upliftment and empowerment of special children.",
   },
 ];
 
 const HeroSlides = () => {
-  return (
-    <div className="relative w-full h-[80vh] overflow-hidden z-10">
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
 
+  const navigate = useNavigate();
+
+  return (
+    <div className="relative w-full h-[70vh] sm:h-[75vh] md:h-[80vh] lg:h-[85vh] overflow-hidden">
       <Swiper
         modules={[Autoplay, Pagination]}
-        autoplay={{ delay: 4000 }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         loop
         className="h-full"
@@ -48,64 +57,80 @@ const HeroSlides = () => {
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className="h-full">
             <div className="relative w-full h-full">
-
-              {/* Background */}
+              {/* Background Image */}
               <img
                 src={slide.image}
-                alt="slide"
-                className="absolute w-full h-full object-cover"
+                alt={slide.title}
+                className="absolute inset-0 w-full h-full object-cover"
               />
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/20" />
 
               {/* Content */}
-              <div className="relative z-10 flex flex-col justify-center h-full px-10 md:px-20 max-w-3xl">
-                <h1 className="text-4xl md:text-6xl text-[#f6CC48] mb-6 font-serif">
-                  {slide.title}
-                </h1>
+              <div className="relative z-10 flex items-center h-full">
+                <div className="px-5 sm:px-8 md:px-16 lg:px-24 max-w-xl sm:max-w-2xl text-center sm:text-left">
+                  <h1
+                    data-aos="fade-up"
+                    className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-serif text-[#f6CC48] mb-4 sm:mb-6 leading-tight"
+                  >
+                    {slide.title}
+                  </h1>
 
-                <p className="text-white text-lg md:text-xl leading-relaxed mb-8 font-sans">
-                  {slide.description}
-                </p>
+                  <p
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    className="text-sm sm:text-base md:text-lg lg:text-xl text-white mb-6 leading-relaxed"
+                  >
+                    {slide.description}
+                  </p>
 
-                <span className="text-3xl md:text-4xl text-white hover:text-[#f6CC48] cursor-pointer transition duration-300">
-                  Read More
-                </span>
+                  <span
+                    data-aos="fade-up"
+                    data-aos-delay="400"
+                    style={{ fontFamily: "Dancing Script, cursive" }}
+                    className="text-3xl md:text-4xl text-white hover:text-[#f6CC48] cursor-pointer transition duration-300"
+                    onClick={() => navigate("/programs")}
+                  >
+                    Read More
+                  </span>
+                </div>
               </div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* Custom Pagination Styling */}
+      {/* Pagination Styling */}
       <style>
         {`
           .swiper {
             height: 100%;
           }
 
-          .swiper-wrapper {
-            height: 100%;
-          }
-
           .swiper-pagination {
-            bottom: 20px !important;
+            bottom: 16px !important;
           }
 
           .swiper-pagination-bullet {
             background-color: white;
-            opacity: 0.7;
-            width: 10px;
-            height: 10px;
-            margin: 0 6px !important;
+            opacity: 0.6;
+            width: 8px;
+            height: 8px;
+          }
+
+          @media (min-width: 768px) {
+            .swiper-pagination-bullet {
+              width: 10px;
+              height: 10px;
+            }
           }
 
           .swiper-pagination-bullet-active {
             background-color: #f6CC48;
             opacity: 1;
             transform: scale(1.2);
-            transition: 0.3s ease;
+            transition: all 0.3s ease;
           }
         `}
       </style>
