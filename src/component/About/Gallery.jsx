@@ -1,6 +1,6 @@
 import React from "react";
 
-const NgoGallery = () => {
+const Gallery = () => {
   return (
     <section
       className="relative py-28 overflow-hidden bg-fixed bg-cover bg-center"
@@ -86,4 +86,4 @@ const NgoGallery = () => {
   );
 };
 
-export default NgoGallery;
+export default Gallery;
