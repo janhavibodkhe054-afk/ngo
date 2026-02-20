@@ -79,16 +79,21 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-yellow-600 transition">
-                  Contact
+                <Link to="/program" className="hover:text-yellow-600 transition">
+                  Program
+                </Link>
+              </li>
+              <li>
+                <Link to="/involve" className="hover:text-yellow-600 transition">
+                  Get Invived
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/donate"
+                  to="/contact"
                   className="text-yellow-700 font-semibold hover:text-yellow-600 transition"
                 >
-                  Donate Now
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -98,7 +103,7 @@ const Footer = () => {
 
         {/* Bottom Line */}
         <div className="border-t mt-14 pt-6 text-center text-xs sm:text-sm text-gray-600">
-          © {new Date().getFullYear()} Mandbudhi Va Sharirik Apang Vikas Sanstha, Amravati. All Rights Reserved.
+          © {new Date().getFullYear()} Mandbudhi & Sharirik Apang Vikas Sanstha, Amravati. All Rights Reserved.
         </div>
 
       </div>
